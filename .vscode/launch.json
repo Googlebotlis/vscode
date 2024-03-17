@@ -2,6 +2,75 @@
 	"version": "0.1.0",
 	"configurations": [
 		{
+			"name": "Attach",
+			"port": 9229,
+			"request": "attach",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"type": "node"
+		},
+		{
+			"name": "Launch via NPM",
+			"request": "launch",
+			"runtimeArgs": [
+				"run-script",
+				"debug"
+			],
+			"runtimeExecutable": "npm",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"type": "node"
+		},
+		{
+			"name": "Electron Main",
+			"program": "${workspaceFolder}/main.js",
+			"request": "launch",
+			"runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"type": "node"
+		},
+		{
+			"name": "Launch Program",
+			"program": "${workspaceFolder}/app.js",
+			"request": "launch",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"type": "node"
+		},
+		{
+			"name": "Attach to Chrome",
+			"port": 9222,
+			"request": "attach",
+			"type": "chrome",
+			"webRoot": "${workspaceFolder}"
+		},
+		{
+			"args": [
+				"generator"
+			],
+			"console": "integratedTerminal",
+			"internalConsoleOptions": "neverOpen",
+			"name": "Yeoman generator",
+			"program": "${workspaceFolder}/node_modules/yo/lib/cli.js",
+			"request": "launch",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"type": "node"
+		},
+		{
+			"name": "Attach to Chrome",
+			"port": 9222,
+			"request": "attach",
+			"type": "chrome",
+			"webRoot": "${workspaceFolder}"
+		},
+		{
 			"type": "node",
 			"request": "launch",
 			"name": "Gulp Build",
@@ -540,7 +609,7 @@
 	],
 	"compounds": [
 		{
-			"name": "VS Code",
+			lis"name": "VS Code",
 			"stopAll": true,
 			"configurations": [
 				"Launch VS Code Internal",
